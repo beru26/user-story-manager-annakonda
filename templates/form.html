@@ -9,31 +9,29 @@
 </head>
 
 <body>
+    <form action="{{ url_for('new_story') }}" method="post">
+        <h1>User Story Manager - {{ title }}</h1>
+        <p>Story Title</p>
+        <p><input name='name'></p>
+        <p>User Story</p>
+        <p><textarea rows="10" cols="25" name='story'></textarea></p>
+        <p>Acceptance Criteria</p>
+        <p><textarea rows="10" cols="25" name='story'></textarea></p>
+        <p>Business value</p>
+        <p><input type="number" name="quantity" min="100" max="1500"></p>
+        <p>Estimation (h)</p>
+        <p><input type="number" name="quantity" min="0.5" max="40"></p>
 
-    <h1>User Story Manager - Add new story</h1>
-    <p>Story Title</p>
-    <p><input name='name'></p>
-    <p>User Story</p>
-    <p><textarea rows="10" cols="25" name='story'></textarea></p>
-    <p>Acceptance Criteria</p>
-    <p><textarea rows="10" cols="25" name='story'></textarea></p>
-    <p>Business value</p>
-    <p><input type="number" name="quantity" min="100" max="1500"></p>
-    <p>Estimation (h)</p>
-    <p><input type="number" name="quantity" min="0.5" max="40"></p>
-
-    <div class="dropdown">
-        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Status
-        <span class="caret"></span></button>
-        <ul class="dropdown-menu">
-            <li><p>Planing</p></li>
-            <li><p>To Do</p></li>
-            <li><p>In Progress</p></li>
-            <li><p>Review</p></li>
-            <li><p>Done</p></li>
-        </ul>
-    </div>
-
+        <h3>Status</h3>
+        <select name="status">
+            <option>Planning</option>
+            <option>To Do</option>
+            <option>In Progress</option>
+            <option>Review</option>
+            <option>Done</option>
+        </select>
+        <input type="submit" value="Save">
+    </form>
 </body>
 
 </html>
